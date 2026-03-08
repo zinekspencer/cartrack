@@ -3,25 +3,16 @@ body {
   background: #1a1a2e;
   color: #eee;
   margin: 0;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-h1 {
-     font-size: 32px;
-      margin-bottom: 24px; 
-    }
+h1 { font-size: 32px; margin-bottom: 24px; }
 
-.screen 
-{ display: none; 
- text-align: center; 
-
-}
-.screen.active 
-{ 
-    display: block; 
-}
+.screen { display: none; text-align: center; }
+.screen.active { display: block; }
 
 .btn {
   padding: 10px 24px;
@@ -33,20 +24,20 @@ h1 {
   border: none;
   border-radius: 6px;
 }
-.btn:hover 
-{ 
-    background: #c73652; 
+.btn:hover { background: #c73652; }
+
+.btn-secondary { background: #16213e; border: 1px solid #444; }
+.btn-secondary:hover { background: #0f3460; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
 }
 
-.btn-secondary 
-{ 
-    background: #16213e; 
-    border: 1px solid #444; 
-}
-.btn-secondary:hover 
-{
-     background: #0f3460; 
-}
+.map-name { font-size: 14px; color: #aaa; }
 
 .palette {
   display: flex;
@@ -62,10 +53,7 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
 }
-.pal-btn.active 
-{ 
-    border-color: white; 
-}
+.pal-btn.active { border-color: white; }
 
 .grid {
   display: inline-grid;
@@ -75,11 +63,41 @@ h1 {
   cursor: crosshair;
 }
 
-.tile 
-{ width: 24px;
-  height: 24px; 
-  background: #4a7c40; 
-}
+.tile { width: 24px; height: 24px; background: #4a7c40; }
 .tile.road  { background: #666; }
 .tile.water { background: #2a6fa8; }
 .tile.sand  { background: #c8a84b; }
+
+.map-list-wrap { margin: 16px 0; }
+
+.list-label { font-size: 12px; color: #aaa; margin-bottom: 6px; }
+
+.map-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 200px;
+}
+
+.map-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #16213e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.map-item:hover { background: #0f3460; }
+
+.map-item .del {
+  color: #e94560;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 4px;
+  margin: 0;
+}

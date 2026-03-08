@@ -10,10 +10,25 @@
 <div id="menu" class="screen active">
   <h1>Car Track Builder</h1>
   <button class="btn" onclick="newMap()">Nova mapa</button>
+
+  <div class="map-list-wrap">
+    <p class="list-label">Ulozene mapy:</p>
+    <div id="mapList" class="map-list"></div>
+  </div>
+
+  <label class="btn btn-secondary">
+    Import
+    <input type="file" id="importInput" accept=".json" onchange="importMap(event)" hidden />
+  </label>
 </div>
 
 <div id="editor" class="screen">
-  <button class="btn btn-secondary" onclick="showScreen('menu')">Menu</button>
+  <div class="toolbar">
+    <button class="btn btn-secondary" onclick="showScreen('menu')">Menu</button>
+    <span id="mapName" class="map-name"></span>
+    <button class="btn" onclick="saveMap()">Ulozit</button>
+    <button class="btn btn-secondary" onclick="exportMap()">Export</button>
+  </div>
 
   <div id="palette" class="palette">
     <div class="pal-btn active" style="background:#4a7c40" data-type="grass"></div>
